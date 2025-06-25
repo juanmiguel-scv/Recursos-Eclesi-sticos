@@ -6,9 +6,10 @@
   <meta name="description" content="Recursos privados para sacerdotes y ministros de la Santa Sede.">
   <meta name="author" content="Santa Sede">
   <title>Recursos para Sacerdotes y Ministros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Georgia', 'Times New Roman', serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #f0f2f5 0%, #d9e6f2 100%);
@@ -29,9 +30,11 @@
       border-bottom: 4px solid #ffd700;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     header h1 {
       margin: 0;
+      font-family: 'Merriweather', serif;
       font-size: 2.8em;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
       position: relative;
@@ -78,6 +81,7 @@
       border-bottom: 3px solid #8b0000;
       padding-bottom: 10px;
       position: relative;
+      font-family: 'Merriweather', serif;
     }
     h2::after {
       content: '';
@@ -105,6 +109,7 @@
       border-radius: 8px;
       font-size: 1.1em;
       transition: border-color 0.3s;
+      margin-right: 10px;
     }
     input[type="text"]:focus {
       border-color: #27ae60;
@@ -129,6 +134,11 @@
       background: rgba(39, 174, 96, 0.05);
       padding: 25px;
       border-left-color: #e74c3c;
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .resource-card {
       background: #fff;
@@ -153,12 +163,18 @@
       color: #c0392b;
       text-decoration: underline;
     }
+    .error-message {
+      color: #e74c3c;
+      margin-top: 10px;
+      font-weight: bold;
+      display: none;
+    }
     @media (max-width: 768px) {
       header h1 { font-size: 2em; }
       section { padding: 15px; }
-      input[type="text"] { width: 100%; }
+      input[type="text"] { width: calc(100% - 120px); margin-right: 0; }
+      button { width: auto; margin-top: 0; }
       .container { padding: 10px; }
-      button { width: 100%; margin-top: 10px; }
     }
   </style>
 </head>
@@ -173,27 +189,145 @@
         <p class="access-note">Este sitio contiene recursos privados para sacerdotes y ministros autorizados. Por favor, utiliza el código de acceso proporcionado por la administración o contacta para obtenerlo.</p>
         <p>Ingresa el código: <input type="text" id="accessCode" placeholder="Código de acceso"></p>
         <button onclick="checkAccess()">Ver Recursos</button>
+        <p id="errorMessage" class="error-message">Código incorrecto. Contacta a la administración.</p>
       </section>
       <section id="resources">
         <h2>Recursos Disponibles</h2>
         <p>Descarga materiales exclusivos para tu ministerio con la bendición de la Santa Sede:</p>
+        
         <div class="resource-card">
           <strong>Misal Romano - Ordinario de la Misa</strong><br>
           <a href="https://drive.google.com/file/d/1aniJrsPd0y9lDy3uN3yFJqvgAFKY0Ihx/view" target="_blank">Ver en línea</a> |
           <a href="https://drive.google.com/uc?export=download&id=1aniJrsPd0y9lDy3uN3yFJqvgAFKY0Ihx" target="_blank">Descargar PDF</a>
         </div>
+        
+        <div class="resource-card">
+          <strong>Misal Romano - Ritos Iniciales</strong><br>
+          <a href="https://drive.google.com/file/d/1JFcGLqBF8yhv-X7sOTKqEpz5VvibLmrN/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1JFcGLqBF8yhv-X7sOTKqEpz5VvibLmrN" target="_blank">Descargar PDF</a>
+        </div>
+        
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia de la Palabra</strong><br>
+          <a href="https://drive.google.com/file/d/1KdhqsaBUHyAA7JgQ-_gDLYR_jFMuSxBX/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1KdhqsaBUHyAA7JgQ-_gDLYR_jFMuSxBX" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Preparación y presentación de los dones</strong><br>
+          <a href="https://drive.google.com/file/d/1w3Xh_nYfgBNminW8GNVOeXiyl7fkWM7S/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1w3Xh_nYfgBNminW8GNVOeXiyl7fkWM7S" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Prefacios</strong><br>
+          <a href="https://drive.google.com/file/d/1f-V08qK_cqucMxzXexFLX-eSNKOTmmbA/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1f-V08qK_cqucMxzXexFLX-eSNKOTmmbA" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Plegaria Eucarística I</strong><br>
+          <a href="https://drive.google.com/file/d/1PTz7-bNHl-4bFvU3FO7EyZf3UWVGJduG/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1PTz7-bNHl-4bFvU3FO7EyZf3UWVGJduG" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Plegaria Eucarística II</strong><br>
+          <a href="https://drive.google.com/file/d/1gVFi1_JLPAx9ZVtVT0OC0H6jGzgPCBnr/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1gVFi1_JLPAx9ZVtVT0OC0H6jGzgPCBnr" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Plegaria Eucarística III</strong><br>
+          <a href="https://drive.google.com/file/d/13Pe20rfYtmzsOrdFxNSDahuXVsWgi1lO/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=13Pe20rfYtmzsOrdFxNSDahuXVsWgi1lO" target="_blank">Descargar PDF</a>
+        </div>
+        
+        <div class="resource-card">
+          <strong>Misal Romano - Liturgia Eucarística - Plegaria Eucarística IV</strong><br>
+          <a href="https://drive.google.com/file/d/1SkWQFKlW2u57ad29WQZj59sHU262w-gd/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1SkWQFKlW2u57ad29WQZj59sHU262w-gd" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Rito de Comunión</strong><br>
+          <a href="https://drive.google.com/file/d/1ll1TadSPH9yDsE6gJoseMuL_6aYcJhF2/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1ll1TadSPH9yDsE6gJoseMuL_6aYcJhF2" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Rito de Conclusión</strong><br>
+          <a href="https://drive.google.com/file/d/1ll1TadSPH9yDsE6gJoseMuL_6aYcJhF2/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1ll1TadSPH9yDsE6gJoseMuL_6aYcJhF2" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Adviento</strong><br>
+          <a href="https://drive.google.com/file/d/1py_TRWs1wTXTOiIBMNoKembNYJXmTutT/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1py_TRWs1wTXTOiIBMNoKembNYJXmTutT" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Navidad</strong><br>
+          <a href="https://drive.google.com/file/d/17WZH8Ni9nTqV5Wmac-HzDK_lOXx1udfD/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=17WZH8Ni9nTqV5Wmac-HzDK_lOXx1udfD" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Cuaresma</strong><br>
+          <a href="https://drive.google.com/file/d/1XAahoUq0njs4xATeJjAVxr-mfbo-GxSq/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1XAahoUq0njs4xATeJjAVxr-mfbo-GxSq" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Sagrado Triduo Pascual</strong><br>
+          <a href="https://drive.google.com/file/d/1l_qmKYXyyB5LXXjOwZ3zXyIR-oXwaMbp/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1l_qmKYXyyB5LXXjOwZ3zXyIR-oXwaMbp" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Pascua</strong><br>
+          <a href="https://drive.google.com/file/d/1KHN0fCq_O-aa-fWShULSVrf-9aDu1yIj/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1KHN0fCq_O-aa-fWShULSVrf-9aDu1yIj" target="_blank">Descargar PDF</a>
+        </div>
+
+        <div class="resource-card">
+          <strong>Misal Romano - Propio del Tiempo - Ordinario</strong><br>
+          <a href="https://drive.google.com/file/d/1eWAHBViwrKVjM-OSdAxhp6_CQJhfbOUK/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1eWAHBViwrKVjM-OSdAxhp6_CQJhfbOUK" target="_blank">Descargar PDF</a>
+        </div>
+        
       </section>
     </div>
   </div>
   <script>
-    function checkAccess() {
+    // ¡¡¡IMPORTANTE!!! Esta es la URL de tu Google Apps Script que me proporcionaste.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFlSLY1wuCtdGBqVoVCw4szsgsQDFvFtUeapcSXjefwWOVGtI2FXsFRUt5NgxA9mrx/exec'; 
+
+    async function checkAccess() {
       const code = document.getElementById('accessCode').value;
-      const correctCode = "CustodeChiaviPietroMilleottocentosetentaunodisettembre"; // Cambia este código por uno seguro y compártelo solo con autorizados
       const resourcesSection = document.getElementById('resources');
-      if (code === correctCode) {
-        resourcesSection.style.display = 'block';
-      } else {
-        alert('Código incorrecto. Contacta a la administración.');
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Ocultar mensaje de error anterior si lo hubiera
+      errorMessage.style.display = 'none'; 
+      
+      try {
+        // Enviar el código al script de Apps Script para verificación
+        const response = await fetch(SCRIPT_URL + '?code=' + encodeURIComponent(code));
+        const data = await response.json(); // Esperamos una respuesta JSON de vuelta
+
+        if (data.isValid) {
+          resourcesSection.style.display = 'block';
+          // Opcional: limpiar el campo de la contraseña después de un acceso exitoso
+          document.getElementById('accessCode').value = ''; 
+        } else {
+          errorMessage.style.display = 'block'; // Mostrar mensaje de error si el código es incorrecto
+        }
+      } catch (error) {
+        console.error('Error al verificar el código:', error);
+        errorMessage.textContent = 'Hubo un problema al verificar el código. Intenta de nuevo.';
+        errorMessage.style.display = 'block';
       }
     }
   </script>
