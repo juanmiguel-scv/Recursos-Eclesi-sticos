@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos privados para sacerdotes y ministros de la Santa Sede.">
+  <meta name="author" content="Santa Sede">
+  <title>Recursos para Sacerdotes y Ministros</title>
+  <style>
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f2f5 0%, #d9e6f2 100%);
+      color: #2c3e50;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .overlay {
+      min-height: 100vh;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(90deg, #8b0000 0%, #4a0000 100%);
+      color: #fff;
+      border-bottom: 4px solid #ffd700;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 2;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: url('https://images.unsplash.com/photo-1503918597319-5f2a3a5f8e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+      background-size: cover;
+      opacity: 0.2;
+      z-index: 1;
+      animation: float 10s infinite alternate;
+    }
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(20px); }
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #27ae60;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #27ae60;
+      font-size: 2em;
+      border-bottom: 3px solid #8b0000;
+      padding-bottom: 10px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #ffd700;
+    }
+    .access-note {
+      color: #8b0000;
+      font-style: italic;
+      font-size: 1.2em;
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #ff9800;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 250px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus {
+      border-color: #27ae60;
+      outline: none;
+    }
+    button {
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #8b0000, #a30000);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.3);
+    }
+    #resources {
+      display: none;
+      background: rgba(39, 174, 96, 0.05);
+      padding: 25px;
+      border-left-color: #e74c3c;
+    }
+    .resource-card {
+      background: #fff;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      border-left: 5px solid #e74c3c;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .resource-card:hover {
+      transform: translateX(10px);
+    }
+    a {
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #c0392b;
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      section { padding: 15px; }
+      input[type="text"] { width: 100%; }
+      .container { padding: 10px; }
+      button { width: 100%; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1>Recursos para Sacerdotes y Ministros</h1>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Acceso Restringido</h2>
+        <p class="access-note">Este sitio contiene recursos privados para sacerdotes y ministros autorizados. Por favor, utiliza el código de acceso proporcionado por la administración o contacta para obtenerlo.</p>
+        <p>Ingresa el código: <input type="text" id="accessCode" placeholder="Código de acceso"></p>
+        <button onclick="checkAccess()">Ver Recursos</button>
+      </section>
+      <section id="resources">
+        <h2>Recursos Disponibles</h2>
+        <p>Descarga materiales exclusivos para tu ministerio con la bendición de la Santa Sede:</p>
+        <div class="resource-card">
+          <strong>Misal Romano - Ordinario de la Misa</strong><br>
+          <a href="https://drive.google.com/file/d/1aniJrsPd0y9lDy3uN3yFJqvgAFKY0Ihx/view" target="_blank">Ver en línea</a> |
+          <a href="https://drive.google.com/uc?export=download&id=1aniJrsPd0y9lDy3uN3yFJqvgAFKY0Ihx" target="_blank">Descargar PDF</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function checkAccess() {
+      const code = document.getElementById('accessCode').value;
+      const correctCode = "CustodeChiaviPietroMilleottocentosetentaunodisettembre"; // Cambia este código por uno seguro y compártelo solo con autorizados
+      const resourcesSection = document.getElementById('resources');
+      if (code === correctCode) {
+        resourcesSection.style.display = 'block';
+      } else {
+        alert('Código incorrecto. Contacta a la administración.');
+      }
+    }
+  </script>
+</body>
+</html>
